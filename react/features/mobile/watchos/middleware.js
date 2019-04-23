@@ -1,7 +1,9 @@
 import { Platform } from 'react-native';
 import * as watch from 'react-native-watch-connectivity';
 
-import { APP_WILL_MOUNT, appNavigate } from '../../app';
+import { appNavigate } from '../../app';
+
+import { APP_WILL_MOUNT } from '../../base/app';
 import { getInviteURL } from '../../base/connection';
 import { setAudioMuted } from '../../base/media';
 import {
@@ -41,30 +43,15 @@ watchOSEnabled && StateListenerRegistry.register(
         _updateApplicationContext(getState);
     });
 
-// FIXME There's a mystery why this middleware gets the APP_WILL_MOUNT
-//  action multiple times which is registers the watch msg subscriber multiple
-//  times.
-let appMounted = false;
-
 /**
  * Middleware that captures conference actions.
  *
  * @param {Store} store - The redux store.
  * @returns {Function}
  */
-watchOSEnabled && MiddlewareRegistry.register(
-({ dispatch, getState }) => next => action => {
-    switch (action.type) {
-    case APP_WILL_MOUNT: {
-        if (!appMounted) {
-            _appWillMount({
-                dispatch,
-                getState
-            });
-            appMounted = true;
-        }
-        break;
-    }
+watchOSEnabled && MiddlewareRegistry.register(store => next => action => {
+    if (action.type === APP_WILL_MOUNT) {
+        _appWillMount(store);
     }
 
     return next(action);
