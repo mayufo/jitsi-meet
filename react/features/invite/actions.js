@@ -56,6 +56,12 @@ export function invite(
             dispatch: Dispatch<any>,
             getState: Function): Promise<Array<Object>> => {
         const state = getState();
+        const inviteUrl = getInviteURL(state);
+
+        if (!inviteUrl) {
+            return Promise.reject('The app is not ready - no invite URL');
+        }
+
         const participants = getParticipants(state);
         const { calleeInfoVisible } = state['features/invite'];
 
@@ -88,7 +94,6 @@ export function invite(
             inviteServiceUrl,
             inviteServiceCallFlowsUrl
         } = state['features/base/config'];
-        const inviteUrl = getInviteURL(state);
         const { jwt } = state['features/base/jwt'];
 
         // First create all promises for dialing out.

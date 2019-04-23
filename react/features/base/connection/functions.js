@@ -8,16 +8,16 @@ import { toState } from '../redux';
  *
  * @param {Function|Object} stateOrGetState - The redux state or redux's
  * {@code getState} function.
- * @returns {string}
+ * @returns {string|undefined}
  */
-export function getInviteURL(stateOrGetState: Function | Object): string {
+export function getInviteURL(stateOrGetState: Function | Object): ?string {
     const state = toState(stateOrGetState);
     const locationURL
         = state instanceof URL
             ? state
             : state['features/base/connection'].locationURL;
 
-    return getURLWithoutParams(locationURL).href;
+    return locationURL ? getURLWithoutParams(locationURL).href : undefined;
 }
 
 /**

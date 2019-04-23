@@ -36,6 +36,7 @@ import CallKit from './CallKit';
 import ConnectionService from './ConnectionService';
 
 const CallIntegration = CallKit || ConnectionService;
+const logger = require('jitsi-meet-logger').getLogger(__filename);
 
 /**
  * Middleware that captures system actions and hooks up CallKit.
@@ -228,8 +229,14 @@ function _conferenceWillJoin({ dispatch, getState }, next, action) {
     const state = getState();
     const { callHandle, callUUID } = state['features/base/config'];
     const url = getInviteURL(state);
-    const handle = callHandle || url.toString();
+    const handle = callHandle || (url && url.toString());
     const hasVideo = !isVideoMutedByAudioOnly(state);
+
+    if (!handle) {
+        logger.error('CallIntegration.startCall failed - no call handle');
+
+        return result;
+    }
 
     // When assigning the call UUID, do so in upper case, since iOS will return
     // it upper cased.
