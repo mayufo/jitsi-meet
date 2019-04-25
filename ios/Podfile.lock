@@ -248,7 +248,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Amplitude-iOS: 2ad4d7270c99186236c1272a3a9425463b1ae1a7
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
-  BVLinearGradient: 0d985ec461359c82bc254f26d11008bdae50d17a
+  BVLinearGradient: b0b70acf63ee888829b7c2ebbf6b50e227396e55
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   DoubleConversion: bb338842f62ab1d708ceb63ec3d999f0f3d98ecd
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
@@ -268,18 +268,18 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   ObjectiveDropboxOfficial: a5afefc83f6467c42c45f2253f583f2ad1ffc701
-  React: 5cb71fb1a15b5ce04794ab49e24b48ebe4c94e65
-  react-native-background-timer: 0d34748e53a972507c66963490c775321a88f6f2
-  react-native-calendar-events: ee9573e355711ac679e071be70789542431f4ce3
-  react-native-fast-image: 47487b71169aea34868e7b38bf870b6b3f2157c5
-  react-native-keep-awake: eba3137546b10003361b37c761f6c429b59814ae
-  react-native-webrtc: a14197fefe96ab462dc098b79c428fc5a7f68216
-  RNGoogleSignin: 361174d9a3090d295b06257162b560d8efc8a6ed
-  RNSound: e157320f503bdd4f4ee6d8542e948d54f90c3c3a
-  RNVectorIcons: d819334932bcda3332deb3d2c8ea4d069e0b98f9
+  React: 1d605e098d69bdf08960787f3446f0a9dc2e2ccf
+  react-native-background-timer: bb7a98c8e97fc7c290de2d423dd09ddb73dcbcbb
+  react-native-calendar-events: fe6fbc8ed337a7423c98f2c9012b25f20444de09
+  react-native-fast-image: cba3d9bf9c2cf8ddb643d887a686c53a5dd90a2c
+  react-native-keep-awake: 0de4bd66de0c23178107dce0c2fcc3354b2a8e94
+  react-native-webrtc: 31b6d3f1e3e2ce373aa43fd682b04367250f807d
+  RNGoogleSignin: 8b08beabff7f3b1373b2821b0944b38de36ba95e
+  RNSound: b360b3862d3118ed1c74bb9825696b5957686ac4
+  RNVectorIcons: 8c52e1e8da1153613fdef44748e865c25556cb9c
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
-  yoga: 596e61c9b57751d08a22b07aba310dbd3e65ab75
+  yoga: 128daf064cacaede0c3bb27424b6b4c71052e6cd
 
 PODFILE CHECKSUM: 4a11c3d66127a9845d4a5b2c7fad49f58a9c7a89
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.5.3
