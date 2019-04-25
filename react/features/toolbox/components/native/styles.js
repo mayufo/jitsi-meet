@@ -11,18 +11,18 @@ import { HANGUP_BUTTON_SIZE } from '../../constants';
  * The style of toolbar buttons.
  */
 const toolbarButton = {
-    backgroundColor: schemeColor('button'),
     borderRadius: 20,
-    borderWidth: 0,
+    borderWidth: 1,
+    borderColor: ColorPalette.white,
     flex: 0,
     flexDirection: 'row',
-    height: 40,
+    height: 45,
     justifyContent: 'center',
 
     // XXX We probably tested BoxModel.margin and discovered it to be too small
     // for our taste.
     marginHorizontal: 7,
-    width: 40
+    width: 45
 };
 
 /**
@@ -30,7 +30,7 @@ const toolbarButton = {
  */
 const toolbarButtonIcon = {
     alignSelf: 'center',
-    color: ColorPalette.darkGrey,
+    color: ColorPalette.white,
     fontSize: 22
 };
 
@@ -107,7 +107,8 @@ ColorSchemeRegistry.register('Toolbox', {
             backgroundColor: schemeColor('hangup'),
             borderRadius: HANGUP_BUTTON_SIZE / 2,
             height: HANGUP_BUTTON_SIZE,
-            width: HANGUP_BUTTON_SIZE
+            width: HANGUP_BUTTON_SIZE,
+            borderWidth: 0
         },
         underlayColor: ColorPalette.buttonUnderlay
     },
