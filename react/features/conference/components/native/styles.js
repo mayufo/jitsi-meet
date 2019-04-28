@@ -62,9 +62,7 @@ export default createStyleSheet({
         iconStyle: {
             color: ColorPalette.white,
             fontSize: 24
-        },
-
-        underlayColor: 'transparent'
+        }
     },
 
     navBarContainer: {
@@ -87,7 +85,7 @@ export default createStyleSheet({
         flex: 1,
         flexDirection: 'row',
         height: 44,
-        justifyContent: 'space-between',
+        justifyContent: 'flex-start',
         paddingHorizontal: 14
     },
 
@@ -104,6 +102,12 @@ export default createStyleSheet({
         paddingHorizontal: 48,
         position: 'absolute',
         right: 0
+    },
+
+    setButton: {
+        color: ColorPalette.white,
+        fontSize: 17,
+        fontWeight: '400'
     },
 
     /**

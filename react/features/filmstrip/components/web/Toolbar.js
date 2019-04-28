@@ -1,4 +1,4 @@
-// @flow
+// @flow 视频下的三个按钮
 
 import React, { Component } from 'react';
 
