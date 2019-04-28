@@ -51,8 +51,7 @@ export const bottomSheetStyles = createStyleSheet({
      * Style for an overlay on top of which the sheet will be displayed.
      */
     overlay: {
-        ...StyleSheet.absoluteFillObject,
-        backgroundColor: 'rgba(127, 127, 127, 0.6)'
+        ...StyleSheet.absoluteFillObject
     }
 });
 
@@ -97,7 +96,6 @@ export const brandedDialog = createStyleSheet({
     overlay: {
         ...StyleSheet.absoluteFillObject,
         alignItems: 'center',
-        backgroundColor: 'rgba(127, 127, 127, 0.6)',
         flexDirection: 'row',
         justifyContent: 'center',
         padding: 30
@@ -154,10 +152,10 @@ ColorSchemeRegistry.register('BottomSheet', {
      * Bottom sheet's base style.
      */
     sheet: {
-        backgroundColor: schemeColor('background'),
         flex: 1,
         paddingHorizontal: MD_ITEM_MARGIN_PADDING,
-        paddingVertical: 8
+        paddingVertical: 8,
+        backgroundColor: '#3C4146'
     },
 
     /**

@@ -1,7 +1,6 @@
-// @flow
+// @flow  更多菜单
 
 import React, { Component } from 'react';
-import { Platform } from 'react-native';
 
 import { ColorSchemeRegistry } from '../../../base/color-scheme';
 import {
@@ -10,15 +9,9 @@ import {
 } from '../../../base/dialog';
 import { connect } from '../../../base/redux';
 import { StyleType } from '../../../base/styles';
-import { InfoDialogButton, InviteButton } from '../../../invite';
 import { AudioRouteButton } from '../../../mobile/audio-mode';
-import { LiveStreamButton, RecordButton } from '../../../recording';
-import { RoomLockButton } from '../../../room-lock';
-import { ClosedCaptionButton } from '../../../subtitles';
 import { TileViewButton } from '../../../video-layout';
 
-import AudioOnlyButton from './AudioOnlyButton';
-import RaiseHandButton from './RaiseHandButton';
 import ToggleCameraButton from './ToggleCameraButton';
 
 declare var __DEV__;
@@ -82,22 +75,7 @@ class OverflowMenu extends Component<Props> {
             <BottomSheet onCancel = { this._onCancel }>
                 <AudioRouteButton { ...buttonProps } />
                 <ToggleCameraButton { ...buttonProps } />
-                <AudioOnlyButton { ...buttonProps } />
-                <RoomLockButton { ...buttonProps } />
-                <ClosedCaptionButton { ...buttonProps } />
-                {
-
-                    // Apple rejected our app because they claim requiring a
-                    // Dropbox account for recording is not acceptable.
-                    // Ddisable it until we can find a way around it.
-                    (__DEV__ || Platform.OS !== 'ios')
-                        && <RecordButton { ...buttonProps } />
-                }
-                <LiveStreamButton { ...buttonProps } />
                 <TileViewButton { ...buttonProps } />
-                <InviteButton { ...buttonProps } />
-                <InfoDialogButton { ...buttonProps } />
-                <RaiseHandButton { ...buttonProps } />
             </BottomSheet>
         );
     }
